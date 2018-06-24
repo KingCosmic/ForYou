@@ -1,0 +1,89 @@
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+	width: 100%;
+	height: 100%;
+
+	display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: OpenSans;
+}
+
+.show {
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
+
+  animation-delay: 4s;
+  -webkit-animation-delay: 4s;
+
+  display: flex;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    display: flex;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    display: flex;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.2em;
+  
+  color: #232526;
+}
+
+.link {
+  color: rgba(64, 80, 90, 1);
+}
+
+.list {
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(64, 80, 90, 1);
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.option {
+  float: left;
+  padding: .5%;
+  font-size: .9em;
+  margin: 0;
+  color: rgba(64, 80, 90, 1);
+}
+
+.content {
+  color: rgba(64, 80, 90, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}

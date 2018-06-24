@@ -1,0 +1,56 @@
+.heart {
+  position: absolute;
+  width: 120px;
+  z-index: 600;
+  height: 100px;
+  left: 41.9%;
+  top: 45%;
+}
+
+.heart:before, .heart:after {
+  content: "";
+  width: 50px;
+  height: 80px;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  border-radius: 50px 50px 6px 6px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+
+  background: #e53935;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.moveHeart {
+  -webkit-animation: moveHeart 2s 1s ease-in-out;
+	animation: moveHeart 2s 1s ease-in-out;
+	-webkit-animation-delay: .9s;
+	animation-delay: .45s;
+	transition: 1.5s;
+	transition-delay: 1s;
+  
+  transform: translate(300px, 200px);
+}
+
+@-webkit-keyframes moveHeart {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(300px, 200px);
+  }
+}
+@keyframes moveHeart {
+	0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(300px, 200px);
+  }
+}

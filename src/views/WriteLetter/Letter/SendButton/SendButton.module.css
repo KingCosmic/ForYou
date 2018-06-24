@@ -1,0 +1,65 @@
+
+.button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  font-family: OpenSans;
+	font-weight: 500;
+  font-size: 1.2em;
+  
+  background-color: tomato;
+  color: #232526;
+
+  -webkit-animation: slideIn 0.5s ease-in-out;
+	animation: slideIn 0.5s ease-in-out;
+  
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideIn {
+	to {
+		transform: translateX(100%);
+	}
+	from {
+		transform: translateX(0px);
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform:translateX(100%);
+		transition: 1s ease-in-out;
+	}
+	to {
+		transform:translateX(0px);
+		transition: 1s ease-in-out;
+	}
+}
+
+.slide {
+	-webkit-animation: slideOut 0.5s ease-in-out;
+	animation: slideOut 0.5s ease-in-out;
+  
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideOut {
+	to {
+		transform: translateX(0px);
+	}
+	from {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		transform:translateX(0px);
+		transition: 1s ease-in-out;
+	}
+	to {
+		transform:translateX(100%);
+		transition: 1s ease-in-out;
+	}
+}
