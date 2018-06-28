@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import Letter from './Letter';
 
-import Credits from '../sharedComponents/Credits';
+import MadeWith from '../sharedComponents/MadeWith';
 
-import styles from './WriteLetter.module.css';
+import styles from './ViewLetter.module.css';
 
-export default class WriteLetter extends Component {
+export default class ViewLetter extends Component {
   constructor(props) {
     super(props);
 
@@ -35,7 +35,7 @@ export default class WriteLetter extends Component {
       <div className={styles.container}>
         <Letter open={open} toggleEnvelope={this.toggleEnvelope} onChange={this.setContent} />
 
-        <Credits />
+        <MadeWith />
       </div>
     );
   }

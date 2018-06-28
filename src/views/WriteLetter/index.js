@@ -14,7 +14,6 @@ export default class WriteLetter extends Component {
     this.state = {
       content: '',
       canSend: false,
-
       send: false
     }
 
@@ -42,7 +41,7 @@ export default class WriteLetter extends Component {
     return (
       <div className={styles.container}>
         <Letter onChange={this.setContent} send={send} canSend={canSend} sendLetter={this.sendLetter} />
-        <Share send={send} />
+        <Share send={send} compressed={this.state.compressed} />
 
         <MadeWith />
       </div>
