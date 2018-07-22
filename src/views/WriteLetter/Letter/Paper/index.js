@@ -9,8 +9,7 @@ export default class Editor extends Component {
   constructor(props) {
     super(props);
 
-    this.defaultParagraphSeparator = 'div';
-    exec('defaultParagraphSeparator', this.defaultParagraphSeparator);
+    exec('defaultParagraphSeparator', 'div');
 
     this.content = React.createRef();
 
@@ -21,12 +20,12 @@ export default class Editor extends Component {
   onInput({ target: { firstChild } }) {
 
     if (firstChild && firstChild.nodeType === 3) {
-      exec('formatBlock', `<${this.defaultParagraphSeparator}>`);
+      exec('formatBlock', `<div>`);
     } else if (this.content.current.innerHTML === '<br>') {
       this.content.current.innerHTML = ''
     }
 
-    this.props.onChange(this.content.current.innerHTML);
+    this.props.setContent(this.content.current.innerHTML);
   }
 
   onKeydown(event) {
@@ -39,7 +38,7 @@ export default class Editor extends Component {
   }
 
   render() {
-    const { send } = this.props;
+    const { checks: { send } } = this.props;
     return ( 
       <div style={{ whiteSpace: 'pre-line' }} className={classNames(styles.paper, { [styles.send]: send })}
         ref={this.content} onInput={this.onInput} onKeyDown={this.onKeydown}

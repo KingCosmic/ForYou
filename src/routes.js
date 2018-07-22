@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import WriteLetter from './views/WriteLetter';
+import WriteLetter from './containers/WriteLetter';
+// import WriteLetter from './views/WriteLetter';
 import ViewLetter from './views/ViewLetter';
 import NotFound from './views/NotFound';
 

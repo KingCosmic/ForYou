@@ -8,11 +8,11 @@ import styles from './styles.module.css';
 
 export default class Letter extends Component {
   render() {
-    const { onChange, toggleEnvelope, open } = this.props
+    const { toggleEnvelope, open, loaded, content } = this.props
     return (
-      <div className={styles.container}>
+      <div className={classNames(styles.container, { [styles.recieved]: loaded })}>
         <Heart open={open} toggleEnvelope={toggleEnvelope}/>
-        <Paper open={open} onChange={onChange} />
+        <Paper open={open} content={content} />
 
         <div className={styles.bottom} />			
         <div className={styles.left} />

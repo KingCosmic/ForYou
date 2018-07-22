@@ -8,18 +8,19 @@ import styles from './styles.module.css';
 
 export default class Letter extends Component {
   render() {
-    const { onChange, canSend, send, sendLetter } = this.props
+    const { checks: { send } } = this.props;
+
     return (
       <div className={classNames(styles.container, { [styles.send]: send })}>
         <div className={styles.envelope}>
-          <Paper onChange={onChange} send={send}/>
+          <Paper {...this.props} />
 
           <div className={styles.bottom} />			
           <div className={styles.left} />
           <div className={styles.right} />
           <div className={classNames(styles.top, { [styles.close]: send })} />
 
-          <SendButton canSend={canSend} sendLetter={sendLetter} />
+          <SendButton {...this.props} />
         </div>
       </div>
     );
