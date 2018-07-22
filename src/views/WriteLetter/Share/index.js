@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import snek from 'snekfetch';
+import axios from 'axios';
 
 import styles from './share.module.css';
 
@@ -17,13 +17,12 @@ class ShareLetter extends Component {
   }
 
   sendLetter() {
-    snek.post('/write')
-    .send({
+    axios.post('/write', {
       content: this.props.letter.content
     })
     .then((res) => {
       this.setState({
-        id: res.body.data
+        id: res.data.data
       })
     })
   }

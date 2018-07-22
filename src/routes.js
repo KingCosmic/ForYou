@@ -8,7 +8,7 @@ import NotFound from './views/NotFound';
 
 const Routes = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path='/' exact component={WriteLetter} />
         <Route path='/:letterId' component={ViewLetter} />

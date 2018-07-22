@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import snek from 'snekfetch';
+import axios from 'axios';
 
 import Letter from './Letter';
 import Loader from './Loader';
@@ -29,14 +29,16 @@ export default class ViewLetter extends Component {
   componentDidMount() {
     const { letterId } = this.props.match.params;
 
-    snek.get(`/${letterId}`)
-    .send()
+    axios.get(`/${letterId}`)
     .then((res) => {
       this.setState({
-        content: res.body.data.content,
+        content: res.data.data.content,
         loaded: true
       })
     })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   render() {
