@@ -17,7 +17,7 @@ class ShareLetter extends Component {
   }
 
   sendLetter() {
-    axios.post('/write', {
+    axios.post('https://foryou.glitch.me/write', {
       content: this.props.letter.content
     })
     .then((res) => {

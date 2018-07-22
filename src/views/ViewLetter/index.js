@@ -29,7 +29,7 @@ export default class ViewLetter extends Component {
   componentDidMount() {
     const { letterId } = this.props.match.params;
 
-    axios.get(`/${letterId}`)
+    axios.get(`https://foryou.glitch.me/${letterId}`)
     .then((res) => {
       this.setState({
         content: res.data.data.content,
